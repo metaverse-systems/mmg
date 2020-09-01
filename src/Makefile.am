@@ -1,0 +1,7 @@
+ACLOCAL_AMFLAGS=-I m4
+bin_PROGRAMS = mmg
+mmg_SOURCES = mmg.cpp
+mmg_CXXFLAGS = -std=c++17 ${LIBECS_CFLAGS} ${JSONCPP_CFLAGS} ${LIBTHE_SEED_CFLAGS}
+mmg_LDFLAGS = -no-undefined
+mmg_LDADD = -lpthread ${LIBECS_LIBS} ${JSONCPP_LIBS} ${LIBTHE_SEED_LIBS}
+
