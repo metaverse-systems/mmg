@@ -57,3 +57,5 @@ dist
 node_modules
 *.ZZT
 *.zzt
+mmg
+mmg.exe
