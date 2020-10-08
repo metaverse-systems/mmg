@@ -17,10 +17,30 @@ void run(int argc, char *argv[])
     zzt_config["board"] = board;
     world->System(SystemLoader::Create("@metaverse-systems/zzt_engine_system", &zzt_config));
 
+    Json::Value tcod_config;
+    tcod_config["width"] = 80;
+    tcod_config["height"] = 25;
+    tcod_config["title"] = "MMG";
+    tcod_config["fullscreen"] = false;
+    tcod_config["font_file"] = "terminal16x28_gs_ro.png";
+    world->System(SystemLoader::Create("@metaverse-systems/tcod_video_system", &tcod_config));
+
     world->Start(1000000 / 30);
 
+    std::string input;
     while(ECS->IsRunning())
     {
+        std::cin >> input;
+
+        if(input == "quit")
+        {
+            ECS->Shutdown();
+        }
+
+        if(input == "export")
+        {
+            std::cout << world->Export() << std::endl;
+        }
         usleep(100000);
     }
 }
