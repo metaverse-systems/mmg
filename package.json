@@ -20,6 +20,7 @@
     "@metaverse-systems/position_component": "^1.0.6",
     "@metaverse-systems/tcod_video_system": "file:../tcod_video_system",
     "@metaverse-systems/text_component": "file:../text_component",
-    "@metaverse-systems/zzt_engine_system": "file:../zzt_engine_system"
+    "@metaverse-systems/zzt_engine_system": "file:../zzt_engine_system",
+    "@metaverse-systems/sdl2_input_system": "file:../sdl2_input_system"
   }
 }

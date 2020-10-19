@@ -25,22 +25,13 @@ void run(int argc, char *argv[])
     tcod_config["font_file"] = "terminal16x28_gs_ro.png";
     world->System(SystemLoader::Create("@metaverse-systems/tcod_video_system", &tcod_config));
 
+    world->System(SystemLoader::Create("@metaverse-systems/sdl2_input_system"));
+
     world->Start(1000000 / 30);
 
     std::string input;
     while(ECS->IsRunning())
     {
-        std::cin >> input;
-
-        if(input == "quit")
-        {
-            ECS->Shutdown();
-        }
-
-        if(input == "export")
-        {
-            std::cout << world->Export() << std::endl;
-        }
         usleep(100000);
     }
 }
