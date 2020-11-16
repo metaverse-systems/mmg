@@ -22,7 +22,7 @@ void run(int argc, char *argv[])
     tcod_config["height"] = 25;
     tcod_config["title"] = "MMG";
     tcod_config["fullscreen"] = false;
-    tcod_config["font_file"] = "terminal16x28_gs_ro.png";
+    tcod_config["font_file"] = "Kyzsmooth.png";
     world->System(SystemLoader::Create("@metaverse-systems/tcod_video_system", &tcod_config));
 
     world->System(SystemLoader::Create("@metaverse-systems/sdl2_input_system"));
